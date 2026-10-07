@@ -1,0 +1,32 @@
+name: GameruleSync
+description: $description
+prefix: on
+version: '${version}'
+
+main: com.yuehuan.gameruleSync.GameruleSync
+api-version: '26.1.2'
+load: POSTWORLD
+
+authors: [ no ]
+website: on
+
+commands:
+  syncgamerules:
+    description: 同步游戏规则到所有世界
+    usage: /syncgamerules [reload]
+    permission: syncgamerules.admin
+  MuteByCmd:
+    description: 禁言管理（按玩家或队伍）
+    usage: /MuteByCmd <玩家> [speak|shout|all]
+    permission: syncgamerules.mute
+  sshout:
+    description: 跨队喊话
+    usage: /sshout <内容>
+
+permissions:
+  syncgamerules.admin:
+    description: 允许执行全量同步和重载配置
+    default: op
+  syncgamerules.mute:
+    description: 允许管理禁言（/MuteByCmd）
+    default: op

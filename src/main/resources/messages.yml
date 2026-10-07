@@ -1,0 +1,79 @@
+# GameruleSync 消息文件 —— 支持颜色代码 (&) 和 {N} 占位符
+
+command:
+  sync:
+    start: "&a[GameruleSync] &a正在规则同步..."
+    success: "&a[GameruleSync] &a[全量同步完成]"
+    success.worlds: "&a[GameruleSync] &e- 成功同步: &f{0}"
+    failed: "&a[GameruleSync] &c- 失败/跳过: &f{0}"
+    in_progress: "&a[GameruleSync] &e同步任务正在进行中，请稍后..."
+    error:
+      no_worlds: "&a[GameruleSync] &c错误：服务器未加载任何世界。"
+      no_source: "&a[GameruleSync] &c错误：无法获取权威源世界（请检查配置 source-world 或默认主世界）。"
+      source_no_rules: "&a[GameruleSync] &e权威源世界无游戏规则可同步。"
+      recursion: "&a[GameruleSync] &c错误：检测到递归深度异常 ({0})，本次同步已取消。"
+  reload:
+    success: "&a[GameruleSync] 配置已重载，定时任务已更新。"
+    error: "&a[GameruleSync] &c重载配置时发生错误，请检查日志。"
+
+log:
+  startup:
+    sync: "[GameruleSync] 规则同步中..."
+  sync:
+    complete: "[GameruleSync] 全量同步结束。成功: {0}, 失败/跳过: {1}"
+    scheduled: "[GameruleSync] 定时全量同步已启动，间隔: {0} 秒"
+    scheduled.disabled: "[GameruleSync] 定时全量同步已禁用 (sync-interval-seconds <= 0)"
+    world_skipped: "[GameruleSync] 跳过未加载的世界: {0}"
+    world_success: "[GameruleSync] 全量同步成功: {0}"
+    world_failed: "[GameruleSync] 世界 {0} 同步存在部分失败。"
+    rule_failed: "[GameruleSync] 同步规则 '{0}' 到 '{1}' 失败: {2}"
+    rule_warning: "[GameruleSync] 实时同步规则 '{0}' 到 '{1}' 失败: {2}"
+    no_rules: "[GameruleSync] 源世界无游戏规则可同步。"
+  event:
+    ignored_recursion: "[GameruleSync] 检测到疑似递归循环！当前同步深度已达 {0}，超过最大允许值 {1}，本次事件将被忽略。"
+    ignored_recursion_detail: "[GameruleSync] 事件来源世界: {0}, 规则: {1}, 执行者: {2}"
+  warning:
+    source_not_found: "[GameruleSync] 配置的世界 '{0}' 不存在，回退到 worlds.get(0)。"
+    no_authority: "[GameruleSync] 无法获取世界，事件同步中止。"
+    event_sync_unavailable: "[GameruleSync] 当前服务器非Paper端实时事件同步已禁用，仅使用定时/手动全量同步。"
+  info:
+    enabled: "[GameruleSync] 已启用通过同步世界规则修复，包含MuteByCMD MDO功能"
+    disabled: "[GameruleSync] 已卸载。"
+    reload: "配置已重载。"
+    paper_listener_registered: "[GameruleSync] 检测到Paper端已启用实时同步监听器。"
+    event_sync_disabled: "[GameruleSync] 配置已禁用事件实时同步，仅使用定时/手动全量同步。"
+  error:
+    config_load: "[GameruleSync] 加载 config.yml 时发生错误，使用默认配置。错误: {0}"
+
+# ======================= 禁言模块 =======================
+mute:
+  cannot_speak: "&c你现在不能说话。"
+  cannot_shout: "&c你现在不能喊话。"
+  cannot_speak_or_shout: "&c你现在不能说话或喊话。"
+  try_sshout: "&7请改用命令: /sshout <内容>"
+  sshout_usage: "&7用法: /sshout <内容>"
+  player_only: "&c只有玩家才能使用此命令。"
+
+  mute_success: "&a已禁言 &f{0} &a（{1}）"
+  unmute_success: "&a已解除 &f{0} &a的禁言（{1}）"
+  team_mute_success: "&a已禁言队伍 &f{0} &a的所有成员（{1}）"
+  team_unmute_success: "&a已解除队伍 &f{0} &a的所有成员的禁言（{1}）"
+
+  status_format: "&e{0} &f的禁言状态: {1}"
+  status_speak: "&c禁言说话"
+  status_shout: "&c禁言喊话"
+  status_all: "&c全部禁言"
+  status_none: "&a未禁言"
+
+  player_not_found: "&c未找到玩家: {0}"
+  team_not_found: "&c未找到队伍: {0}"
+  player_offline: "&7注意: 玩家 {0} 当前不在线，已按名称设置禁言。"
+  no_muted_players: "&e当前没有被禁言的在线玩家。"
+  muted_list_header: "&e===== 被禁言的在线玩家 ====="
+  muted_list_entry: "&f{0} &7- {1}"
+
+  usage: "&7用法: /MuteByCmd <玩家> [speak|shout|all] | /MuteByCmd team <队伍> [speak|shout|all] | /MuteByCmd status [玩家]"
+  team_usage: "&7用法: /MuteByCmd team <队伍> [speak|shout|all]"
+
+  team_chat_format: "&e[TEAM] &f{0}&7: &r{1}"
+  shout_format: "&6[SHOUT] &f{0}&7: &r{1}"

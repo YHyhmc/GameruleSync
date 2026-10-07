@@ -1,0 +1,13 @@
+# 权威源世界名称（留空则使用 worlds.get(0)，通常是主世界）
+source-world: ""
+
+# 是否启用事件实时同步（需要 Paper 服务端；Spigot 会自动降级为仅定时/手动全量同步）
+event-sync-enabled: true
+
+# 定时全量同步间隔（秒，0 = 禁用定时同步）
+sync-interval-seconds: 0
+
+# ======================= Mute =======================
+mute:
+  # 是否启用MuteByCMDmod功能
+  team-chat-enabled: true
