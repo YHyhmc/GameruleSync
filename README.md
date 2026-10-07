@@ -1,4 +1,7 @@
-# GameruleSync
+
+# language
+[Zh](https://github.com/YHyhmc/GameruleSync/edit/main/README.md)
+[EN]](https://github.com/YHyhmc/GameruleSync/edit/main/README_en.md)
 
 ## 功能概述
 
