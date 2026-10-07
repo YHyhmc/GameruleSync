@@ -1,5 +1,7 @@
 # GameruleSync
 
+## language[[Zh](https://github.com/YHyhmc/GameruleSync/edit/main/README.md)|[EN](https://github.com/YHyhmc/GameruleSync/edit/main/README_en.md)]
+
 ## Overview
 
 This plugin lets you play maps such as [MiniGames](https://github.com/wifi-left/Map-MiniGames) on plugin-based server software like Paper.
